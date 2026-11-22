@@ -10,6 +10,24 @@ Reusable instructions for coding agents working on high-energy and nuclear physi
 
 The hepyy skill includes [environment guidance](skills/hepyy/references/environments.md) and a [project AGENTS.md example](skills/hepyy/assets/AGENTS.md). There is no separate top-level templates directory.
 
+## Register your project's existing environment
+
+After installing the skill below, activate the conda environment or venv you want
+agents to reuse, then run:
+
+```bash
+python /path/to/agent-skills/scripts/setup-project.py --project /path/to/analysis
+```
+
+The script detects the running interpreter, saves machine-local environment
+configuration, and adds shared instructions to `AGENTS.md` and `CLAUDE.md`.
+It creates no environments and installs no dependencies. Add `--dry-run` to preview
+changes, or use `--help` for syntax.
+
+See **[scripts/README.md](scripts/README.md)** for copy-paste conda/venv examples,
+the existing environment creation and picker tools, generated files, and the first
+agent prompt.
+
 ## Use with Codex or Claude Code
 
 Clone this repository to a stable location:
